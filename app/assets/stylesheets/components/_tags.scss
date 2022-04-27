@@ -1,0 +1,32 @@
+.person-tag {
+  color: white;
+  padding: 6px 16px;
+  border-radius: 4px;
+  background: rgb(0, 0, 0);
+  transition: background 0.3s ease;
+  position: absolute;
+  top: 8rem;
+  right: 2rem;
+}
+
+.category-tag {
+  color: white;
+  padding: 6px 16px;
+  border-radius: 4px;
+  background: rgb(0, 0, 0);
+  transition: background 0.3s ease;
+  position: absolute;
+  top: 8rem;
+  right: 10rem;
+}
+
+.price-tag {
+  color: white;
+  padding: 6px 16px;
+  border-radius: 4px;
+  background: rgb(0, 0, 0);
+  transition: background 0.3s ease;
+  position: absolute;
+  top: 8rem;
+  right: 16rem;
+}
