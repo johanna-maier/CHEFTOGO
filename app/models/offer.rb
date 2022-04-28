@@ -9,7 +9,7 @@ class Offer < ApplicationRecord
   validates :title, uniqueness: true, presence: true
   validates :description, presence: true
 
-  validates :price, numericality: { only_integer: true }, presence: true
+  validates :price, numericality: true, presence: true
   validates :number_of_people, numericality: { only_integer: true }, presence: true
   validates :category, inclusion: { in: CATEGORY }, presence: true
 end
