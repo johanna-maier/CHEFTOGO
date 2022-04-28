@@ -42,3 +42,4 @@ yarn-debug.log*
 .DS_Store
 # Ignore .env files
 .env*
+.env*

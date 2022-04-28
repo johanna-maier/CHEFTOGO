@@ -1,13 +1,19 @@
 class OffersController < ApplicationController
+  before_action :set_offer, only: [:show, :edit, :update, :destroy]
+
   def index
   end
 
   def show
-    @offer = Offer.find(params[:id])
+    # @offer = Offer.find(params[:id])
   end
 
   def new
     @offer = Offer.new
+  end
+
+  def edit
+   # @offer = Offer.find(params[:id])
   end
 
   def create
@@ -21,9 +27,27 @@ class OffersController < ApplicationController
     end
   end
 
+  def update
+    if @offer.update(offer_params)
+      redirect_to @offer, notice: 'Offer was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    # @offer = Offer.find(params[:id])
+    @offer.destroy
+    redirect_to @offers, notice: 'Offer was successfully destroyed.'
+  end
+
   private
 
   def offer_params
-    params.require(:offer).permit(:title, :description, :price, :number_of_people, :category)
+    params.require(:offer).permit(:title, :description, :price, :number_of_people, :category, :photo)
+  end
+
+  def set_offer
+    @offer = Offer.find(params[:id])
   end
 end
