@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-9 col-lg-6 m-3 pb-3 card">
+      <%= simple_form_for [@offer, @booking] do |f|%>
+        <%= f.input :booking_date, as: :date, html5: true %>
+        <%= f.input :start_time, as: :time, html5: true %>
+        <%= f.input :end_time, as: :time, html5: true %>
+        <%= f.input :address %>
+        <%= f.input :comment %>
+        <%= f.submit 'Book', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
