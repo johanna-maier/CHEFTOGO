@@ -117,92 +117,63 @@ offers = [
       email: 'marcomazza@gmail.com',
       password: '123456'
     }
+  },  {
+    title: 'Steak Evening',
+    description: 'Enjoy one night of the best steak in town cooked by Thomas.',
+    price: 300,
+    number_of_people: 10,
+    category: 'American',
+    img_file_name: 'steak-chef.jpg',
+    chef: {
+      first_name: 'Thomas',
+      last_name: 'Williams',
+      description: "Hi, my name is Thomas! I'm a steak chef from Brooklyn",
+      email: 'thomaswilliams@gmail.com',
+      password: '123456'
+    }
+  },  {
+    title: 'Sushi Live Cooking',
+    description: 'Enjoy one night of the best BBQ in town cooked by Jiro.',
+    price: 300,
+    number_of_people: 10,
+    category: 'Japanese',
+    img_file_name: 'sushi-chef.jpg',
+    chef: {
+      first_name: 'Jiro',
+      last_name: 'Ono',
+      description: "Hi, my name is Jiro! I'm a sushi chef from Tokyo",
+      email: 'jiroono@gmail.com',
+      password: '123456'
+    }
+  },  {
+    title: 'Vegan Cooking Evening',
+    description: 'Enjoy one night of the best vegan food in town cooked by James.',
+    price: 300,
+    number_of_people: 10,
+    category: 'Vegan',
+    img_file_name: 'vegan-chef.jpg',
+    chef: {
+      first_name: 'James',
+      last_name: 'Hoot',
+      description: "Hi, my name is James! I'm a vegan chef from California",
+      email: 'jameshoot@gmail.com',
+      password: '123456'
+    }
+  },  {
+    title: 'Vietnamese Cooking Evening',
+    description: 'Enjoy one night of the best Vietnamese food in town cooked by Tway.',
+    price: 300,
+    number_of_people: 10,
+    category: 'Vietnamese',
+    img_file_name: 'vietnamese-chef.jpg',
+    chef: {
+      first_name: 'Tway',
+      last_name: 'Nguyen',
+      description: "Hi, my name is Tway! I'm a Vietnamese chef from Hanoi",
+      email: 'twaynguyen@gmail.com',
+      password: '123456'
+    }
   }
- # ,  {
-  #   title: 'BBQ Cooking Evening',
-  #   description: 'Enjoy one night of the best BBQ in town cooked by Dan.',
-  #   price: 300,
-  #   number_of_people: 10,
-  #   category: 'American',
-  #   img_file_name: 'bbq-chef.jpg',
-  #   chef: {
-  #     first_name: 'Dan',
-  #     last_name: 'Smith',
-  #     description: "Hi, my name is Dan! I'm a BBQ chef from Texas",
-  #     email: 'dansmith@gmail.com',
-  #     password: '123456'
-  #   }
-  # },  {
-  #   title: 'BBQ Cooking Evening',
-  #   description: 'Enjoy one night of the best BBQ in town cooked by Dan.',
-  #   price: 300,
-  #   number_of_people: 10,
-  #   category: 'American',
-  #   img_file_name: 'bbq-chef.jpg',
-  #   chef: {
-  #     first_name: 'Dan',
-  #     last_name: 'Smith',
-  #     description: "Hi, my name is Dan! I'm a BBQ chef from Texas",
-  #     email: 'dansmith@gmail.com',
-  #     password: '123456'
-  #   }
-  # },  {
-  #   title: 'BBQ Cooking Evening',
-  #   description: 'Enjoy one night of the best BBQ in town cooked by Dan.',
-  #   price: 300,
-  #   number_of_people: 10,
-  #   category: 'American',
-  #   img_file_name: 'bbq-chef.jpg',
-  #   chef: {
-  #     first_name: 'Dan',
-  #     last_name: 'Smith',
-  #     description: "Hi, my name is Dan! I'm a BBQ chef from Texas",
-  #     email: 'dansmith@gmail.com',
-  #     password: '123456'
-  #   }
-  # },  {
-  #   title: 'BBQ Cooking Evening',
-  #   description: 'Enjoy one night of the best BBQ in town cooked by Dan.',
-  #   price: 300,
-  #   number_of_people: 10,
-  #   category: 'American',
-  #   img_file_name: 'bbq-chef.jpg',
-  #   chef: {
-  #     first_name: 'Dan',
-  #     last_name: 'Smith',
-  #     description: "Hi, my name is Dan! I'm a BBQ chef from Texas",
-  #     email: 'dansmith@gmail.com',
-  #     password: '123456'
-  #   }
-  # },  {
-  #   title: 'BBQ Cooking Evening',
-  #   description: 'Enjoy one night of the best BBQ in town cooked by Dan.',
-  #   price: 300,
-  #   number_of_people: 10,
-  #   category: 'American',
-  #   img_file_name: 'bbq-chef.jpg',
-  #   chef: {
-  #     first_name: 'Dan',
-  #     last_name: 'Smith',
-  #     description: "Hi, my name is Dan! I'm a BBQ chef from Texas",
-  #     email: 'dansmith@gmail.com',
-  #     password: '123456'
-  #   }
-  # },  {
-  #   title: 'BBQ Cooking Evening',
-  #   description: 'Enjoy one night of the best BBQ in town cooked by Dan.',
-  #   price: 300,
-  #   number_of_people: 10,
-  #   category: 'American',
-  #   img_file_name: 'bbq-chef.jpg',
-  #   chef: {
-  #     first_name: 'Dan',
-  #     last_name: 'Smith',
-  #     description: "Hi, my name is Dan! I'm a BBQ chef from Texas",
-  #     email: 'dansmith@gmail.com',
-  #     password: '123456'
-  #   }
- # }
 
 ]
 
@@ -212,7 +183,8 @@ offers = [
 # version = 1234567890
 # format = "jpg"
 
-offers.each do |offer|
+offers.each_with_index do |offer, index|
+  puts "Seed user & offer (#{index + 1}/#{offers.length})"
   puts 'Creating user'
   seed_user = User.new(
     first_name: offer[:chef][:first_name],
@@ -242,9 +214,55 @@ offers.each do |offer|
   puts 'Associating offer and user'
   seed_offer.user = seed_user
   puts 'Saving offer'
-
+  puts ''
   seed_offer.save!
 end
 
 
-puts 'Seeded lists'
+puts 'Seeded offers & chefs'
+puts ''
+puts 'Creating new users who want to book'
+
+users = [
+    {
+      first_name: 'Johanna',
+      last_name: 'Maier',
+      description: "Hi, my name is Johanna! I want to book a chef.",
+      email: 'johanna@gmail.com',
+      password: '123456'
+    },
+    {
+      first_name: 'Anjali',
+      last_name: 'Kumar',
+      description: "Hi, my name is Anjali! I want to book a chef.",
+      email: 'anjali@gmail.com',
+      password: '123456'
+    },
+    {
+      first_name: 'Alexandra',
+      last_name: 'Stroe',
+      description: "Hi, my name is Alexandra! I want to book a chef.",
+      email: 'alexandra@gmail.com',
+      password: '123456'
+    },
+    {
+      first_name: 'Ieva',
+      last_name: 'Jirgensone',
+      description: "Hi, my name is Ieva! I want to book a chef.",
+      email: 'ieva@gmail.com',
+      password: '123456'
+    }
+]
+
+users.each_with_index do |user, index|
+  puts "Seed users for booking (#{index + 1}/#{users.length})"
+
+  seed_user = User.new(
+    first_name: user[:first_name],
+    last_name: user[:last_name],
+    description: user[:description],
+    email: user[:email],
+    password: user[:password]
+  )
+  seed_user.save!
+end
