@@ -6,15 +6,7 @@
         <%= current_user.first_name %>
       </h1>
       <p>(<%= link_to 'Back to the homepage', root_path %>)</p>
-      <%= simple_form_for [@offer] do |f| %>
-        <%= f.input :title %>
-        <%= f.input :description %>
-        <%= f.input :price, as: :integer %>
-        <%= f.input :number_of_people, as: :integer %>
-        <%= f.input :category %>
-        <%= f.input :photo, as: :file %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
-      <% end %>
+      <%= render 'form', offer: @offer %>
     </div>
   </div>
 </div>
