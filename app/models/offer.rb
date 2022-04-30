@@ -3,7 +3,7 @@ class Offer < ApplicationRecord
   has_many :bookings
   has_one_attached :photo
 
-  CATEGORY = ['German', 'Italian', 'Vietnamese', 'French', 'Indian', 'Fusion'].freeze
+  CATEGORY = ['German', 'Italian', 'Vietnamese', 'Vegan', 'French', 'Indian', 'Fusion', 'American', 'Japanese'].freeze
 
   # An offer must have a unique title and a description
   validates :title, uniqueness: true, presence: true
