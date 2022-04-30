@@ -1,8 +1,9 @@
-<h3>Booking Offer #<%= @offer.id%> - <%= @offer.title%> </h3>
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-9 col-lg-6 m-3 pb-3">
     <div id="new_booking">
+      <%= render "shared/offer_card", offer: @offer %>
+
       <%= simple_form_for [@offer, @booking] do |f|%>
         <%= f.input :booking_date, as: :date, html5: true %>
         <%= f.input :start_time, as: :time, html5: true %>
