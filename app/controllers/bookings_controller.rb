@@ -1,5 +1,11 @@
 class BookingsController < ApplicationController
   before_action :get_offer
+  skip_before_action :get_offer, only: :index
+
+  def index
+    @bookings = Booking.all
+  end
+
   def new
     @booking = Booking.new
   end

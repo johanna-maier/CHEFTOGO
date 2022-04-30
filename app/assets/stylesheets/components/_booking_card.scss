@@ -1,0 +1,39 @@
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(54, 50, 31);
+  font-family: inherit;
+  font-size: larger;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 30px;
+}
+
+.card-category a {
+  color: inherit;
+}
+
+.card-category > .card-infos {
+  height: 100%;
+  width: 100%;
+  padding: 20px 20px 0;
+}
+
+.btn-transparent {
+  color: rgba(79, 79, 79, 0.6);
+  padding: 5px 18px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  background: rgba(97, 40, 40, 0.2);
+  transition: background 0.2s ease;
+}
+
+.btn-transparent:hover {
+  background: #b74315;
+  color: white;
+}
