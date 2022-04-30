@@ -12,10 +12,10 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
-          <% if current_user.offers %>
-              <%= link_to "My Offers", "#", class: "nav-link" %>
+          <% if current_user.offers.length == 0 %>
+            <%= link_to "New Offer", new_offer_path, class: "nav-link" %>
           <% else %>
-              <%= link_to "New Offer", new_offer_path, class: "nav-link" %>
+             <%= link_to "My Offers", "#", class: "nav-link" %>
           <% end %>
           </li>
           <li class="nav-item active">
