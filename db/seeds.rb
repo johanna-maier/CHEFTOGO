@@ -26,8 +26,8 @@ offers = [
   {
     title: 'BBQ Cooking Evening',
     description: 'Enjoy one night of the best BBQ in town cooked by Dan.',
-    price: 300,
-    number_of_people: 10,
+    price: 500,
+    number_of_people: 15,
     category: 'American',
     img_file_name: 'bbq-chef.jpg',
     chef: {
@@ -40,8 +40,8 @@ offers = [
   },  {
     title: 'Parisian Delicacies',
     description: 'Experience the tastes of Paris with Raphaël.',
-    price: 300,
-    number_of_people: 10,
+    price: 150,
+    number_of_people: 3,
     category: 'French',
     img_file_name: 'french-chef.jpg',
     chef: {
@@ -54,8 +54,8 @@ offers = [
   },  {
     title: 'Best Hamburgers Made for You!',
     description: 'Have a great hamburger feast with Stanley!',
-    price: 300,
-    number_of_people: 10,
+    price: 150,
+    number_of_people: 5,
     category: 'American',
     img_file_name: 'hamburger-chef.jpg',
     chef: {
@@ -68,8 +68,8 @@ offers = [
   },  {
     title: 'Indian Culinary Experience',
     description: 'Enjoy one night of the best Indian food in town cooked by Ramesh Mehra.',
-    price: 300,
-    number_of_people: 10,
+    price: 180,
+    number_of_people: 5,
     category: 'Indian',
     img_file_name: 'indian-chef.jpg',
     chef: {
@@ -82,8 +82,8 @@ offers = [
   },  {
     title: 'Handmade Cheesy Käsespätzle',
     description: 'Enjoy one night of the best Käsespätzle in town cooked by our crew.',
-    price: 300,
-    number_of_people: 10,
+    price: 210,
+    number_of_people: 6,
     category: 'German',
     img_file_name: 'kaesespaetzle-chefs.jpg',
     chef: {
@@ -96,8 +96,8 @@ offers = [
   },  {
     title: 'Molecular Food Experience',
     description: 'Enjoy a night of molecular food magic with Haru.',
-    price: 300,
-    number_of_people: 10,
+    price: 370,
+    number_of_people: 4,
     category: 'Japanese',
     img_file_name: 'molecular-cooking-chef.jpg',
     chef: {
@@ -110,8 +110,8 @@ offers = [
   },  {
     title: 'Authentic Italian Pasta',
     description: 'Enjoy one night of the Italian pasta in town cooked by Marco.',
-    price: 300,
-    number_of_people: 10,
+    price: 240,
+    number_of_people: 7,
     category: 'Italian',
     img_file_name: 'pasta-chef.jpg',
     chef: {
@@ -124,8 +124,8 @@ offers = [
   },  {
     title: 'Steak Evening',
     description: 'Enjoy one night of the best steak in town cooked by Thomas.',
-    price: 300,
-    number_of_people: 10,
+    price: 160,
+    number_of_people: 3,
     category: 'American',
     img_file_name: 'steak-chef.jpg',
     chef: {
@@ -138,8 +138,8 @@ offers = [
   },  {
     title: 'Sushi Live Cooking',
     description: 'Enjoy one night of the best BBQ in town cooked by Jiro.',
-    price: 300,
-    number_of_people: 10,
+    price: 220,
+    number_of_people: 4,
     category: 'Japanese',
     img_file_name: 'sushi-chef.jpg',
     chef: {
@@ -152,8 +152,8 @@ offers = [
   },  {
     title: 'Vegan Cooking Evening',
     description: 'Enjoy one night of the best vegan food in town cooked by James.',
-    price: 300,
-    number_of_people: 10,
+    price: 150,
+    number_of_people: 5,
     category: 'Vegan',
     img_file_name: 'vegan-chef.jpg',
     chef: {
@@ -166,8 +166,8 @@ offers = [
   },  {
     title: 'Vietnamese Cooking Evening',
     description: 'Enjoy one night of the best Vietnamese food in town cooked by Tway.',
-    price: 300,
-    number_of_people: 10,
+    price: 180,
+    number_of_people: 6,
     category: 'Vietnamese',
     img_file_name: 'vietnamese-chef.jpg',
     chef: {
