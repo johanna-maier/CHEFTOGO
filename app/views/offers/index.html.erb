@@ -6,6 +6,8 @@
 
 <div class="d-flex flex-column align-items-center">
   <div class="col-12 col-md-10 col-lg-7">
-    <%= render "shared/offer_card" %>
+    <% @offers.each do |offer| %>
+    <%= render "shared/offer_card", offer: offer %>
+    <% end %>
   </div>
 </div>
