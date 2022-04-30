@@ -1,0 +1,15 @@
+<%= link_to offer_path(booking.offer) do %>
+  <div class="container card-category" style="background-image: linear-gradient(rgba(243,243,243,0.6), rgba(243,243,243,0.7)), url(<%= cl_image_path booking.offer.photo.key %>);">
+    <div class="d-flex flex-column justify-content-between card-infos">
+      <h2><%= booking.offer.title %></h2>
+      <div class="d-flex justify-content-between">
+        <p><%= booking.start_time.to_s.slice(11..15) %> | <%= booking.booking_date %></p>
+        <p>with: <strong><%= booking.offer.user.first_name %></strong></p>
+      </div>
+      <div class="d-flex justify-content-between">
+        <p><%= booking.address %></p>
+        <%= link_to "Cancel", "#", class: "btn btn-transparent" %>
+      </div>
+    </div>
+  </div>
+<% end %>

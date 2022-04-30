@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row text-center">
+    <h1>My Bookings</h1>
+  </div>
+</div>
+
+<div class="d-flex flex-column align-items-center">
+  <div class="col-12 col-md-10 col-lg-7">
+    <% @bookings.each do |booking| %>
+      <%= render "shared/booking_card", booking: booking %>
+    <% end %>
+  </div>
+</div>
