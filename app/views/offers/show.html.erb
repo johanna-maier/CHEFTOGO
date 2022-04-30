@@ -10,9 +10,16 @@
   </div>
 </div>
 
-<%= link_to "Back to offers", offers_path %>
-<%= link_to "Edit this offer", edit_offer_path %>
+
+
+  <% if @offer.user == current_user %>
+    <%= link_to "Edit this offer", edit_offer_path, class: "btn btn-outline-secondary" %>
+
+  <%end%>
+
+<% if @offer.user == current_user %>
 <%= link_to "Delete this offer",
-             offer_path(@offer),
+             offer_path(@offer), class: "btn btn-outline-danger",
              method: :delete,
              data: { confirm: "Are you sure?" } %>
+<%end%>
