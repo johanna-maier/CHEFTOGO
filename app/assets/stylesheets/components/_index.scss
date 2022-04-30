@@ -6,3 +6,14 @@
 @import "banner";
 @import "buttons";
 @import "tags";
+@import "offer_card";
+@import "offers_banner";
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  :hover {
+    color: rgb(106, 58, 58);
+  }
+}
