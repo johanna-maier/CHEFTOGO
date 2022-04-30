@@ -2,11 +2,10 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-9 text-center m-3 pb-3">
-      <h1>Create a new offer for the chef
-        <%= current_user.first_name %>
-      </h1>
-      <p>(<%= link_to 'Back to the homepage', root_path %>)</p>
+      <h1>Create your new offer </h1>
+
       <%= render 'form', offer: @offer %>
+      <%= link_to 'Cancel', offers_path, class:'btn btn primary' %>
     </div>
   </div>
 </div>
