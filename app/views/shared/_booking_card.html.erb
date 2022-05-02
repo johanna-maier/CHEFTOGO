@@ -8,7 +8,10 @@
       </div>
       <div class="d-flex justify-content-between">
         <p><%= booking.address %></p>
-        <%= link_to "Cancel", "#", class: "btn btn-transparent" %>
+        <%= link_to "Cancel",
+             booking_path(booking), class: "btn btn-transparent",
+             method: :delete,
+             data: { confirm: "Are you sure you want to cancel this booking?" } %>
       </div>
     </div>
   </div>
