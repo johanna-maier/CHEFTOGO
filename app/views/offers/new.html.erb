@@ -5,7 +5,8 @@
       <h1>Create your new offer </h1>
 
       <%= render 'form', offer: @offer %>
-      <%= link_to 'Cancel', offers_path, class:'btn btn primary' %>
+      <%= link_to 'Cancel', offers_path%>
+      <%# link_to 'Cancel', :back %>
     </div>
   </div>
 </div>
