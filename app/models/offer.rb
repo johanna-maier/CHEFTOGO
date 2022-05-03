@@ -1,7 +1,19 @@
 class Offer < ApplicationRecord
   belongs_to :user
+
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :title, :description ],
+    associated_against: {
+      user: [ :first_name, :last_name ]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
+
   has_many :bookings
   has_one_attached :photo
+
 
   CATEGORY = ['German', 'Italian', 'Vietnamese', 'Vegan', 'French', 'Indian', 'Fusion', 'American', 'Japanese'].freeze
 
@@ -12,4 +24,6 @@ class Offer < ApplicationRecord
   validates :price, numericality: true, presence: true
   validates :number_of_people, numericality: { only_integer: true }, presence: true
   validates :category, inclusion: { in: CATEGORY }, presence: true
+
+
 end
