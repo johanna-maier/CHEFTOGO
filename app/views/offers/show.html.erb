@@ -23,3 +23,30 @@
              method: :delete,
              data: { confirm: "Are you sure?" } %>
 <%end%>
+
+<% @offer.reviews.each do |review| %>
+<hr>
+ <ul>
+  <li><%= review.title %></li>
+  <li><%= review.content %></li>
+  <li><%= review.user.first_name %></li>
+  <li><%= review.rating %></li>
+  <li>   <%= link_to "Remove",
+                  review_path(review),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+
+</ul>
+<hr>
+<% end %>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-9 col-lg-6 m-3 pb-3">
+    <div id="new_review">
+    <hr>
+    <h3>Leave a new review for <%= @offer.title %></h3>
+      <%= render "reviews/form" %>
+    </div>
+  </div>
+</div>
