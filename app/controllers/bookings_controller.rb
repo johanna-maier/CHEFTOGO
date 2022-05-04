@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.offer = @offer
+    raise
     if @booking.save
       # redirect_to root_path # TODO: change this link
       redirect_to offers_path, notice: 'Your booking was successful!'
@@ -24,7 +25,6 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    # TODO: before action ? redirect to - what?
     @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to bookings_path

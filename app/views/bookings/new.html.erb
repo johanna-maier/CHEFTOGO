@@ -5,10 +5,21 @@
       <%= render "shared/offer_card", offer: @offer %>
 
       <%= simple_form_for [@offer, @booking] do |f|%>
-        <%= f.input :booking_date, as: :date, html5: true %>
-        <div class="d-flex">
+        <%# <%= f.input :booking_date, as: :date, html5: true %>
+        <%= f.input :booking_date, as: :string, placeholder: 'Select a date',
+            input_html: { data:
+            { controller: "flatpickr",
+              attributes: { dateFormat: "d.m.Y", minDate: Time.zone.now }} } %>
+        <div class="d-flex" id="time-input">
           <div style="flex-grow:1">
-            <%= f.input :start_time, as: :time, html5: true %>
+            <%= f.input :start_time, as: :time, html5: true,
+            input_html: { data:
+            {controller: "flatpickr",
+              attributes: {
+                enableTime: true,
+                noCalendar: true,
+                dateFormat: "H:i"
+              }} }%>
           </div>
           <div style="flex-grow:1">
           <%= f.input :end_time, as: :time, html5: true %>
@@ -22,4 +33,14 @@
     </div>
     </div>
   </div>
+</div>
+<!--
+<div class="container col-4" >
+  <%= simple_form_for [@offer, @booking] do |f| %>
+    <%= f.input :booking_date, as: :string, input_html: { data:
+    { controller: "flatpickr",
+      flatpickr_date_format: "Y.m.d",
+      flatpickr_min_date: Time.zone.now
+    } } %>
+  <% end %>
 </div>
