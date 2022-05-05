@@ -12,6 +12,7 @@ class OffersController < ApplicationController
 
   def show
     # @offer = Offer.find(params[:id])
+    @review = Review.new # Added because partial review form needs it.
   end
 
   def new
