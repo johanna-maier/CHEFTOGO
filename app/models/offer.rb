@@ -3,7 +3,7 @@ class Offer < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :global_search,
-    against: [ :title, :description ],
+    against: [ :title, :description, :category ],
     associated_against: {
       user: [ :first_name, :last_name ]
     },
