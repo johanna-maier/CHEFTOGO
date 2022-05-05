@@ -12,7 +12,8 @@ class Offer < ApplicationRecord
     }
 
   has_many :bookings
-  has_one_attached :photo
+  # has_one_attached :photo
+  has_many_attached :photos
 
 
   CATEGORY = ['German', 'Italian', 'Vietnamese', 'Vegan', 'French', 'Indian', 'Fusion', 'American', 'Japanese'].freeze
