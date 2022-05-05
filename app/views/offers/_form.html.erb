@@ -4,6 +4,6 @@
   <%= f.input :price, as: :integer %>
   <%= f.input :number_of_people, as: :integer %>
   <%= f.input :category, collection: Offer::CATEGORY %>
-  <%= f.input :photo, as: :file %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
