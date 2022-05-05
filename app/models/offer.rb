@@ -16,7 +16,6 @@ class Offer < ApplicationRecord
   has_many_attached :photos
   has_many :reviews, dependent: :destroy
 
-
   CATEGORY = ['German', 'Italian', 'Vietnamese', 'Vegan', 'French', 'Indian', 'Fusion', 'American', 'Japanese'].freeze
 
   # An offer must have a unique title and a description
@@ -26,6 +25,5 @@ class Offer < ApplicationRecord
   validates :price, numericality: true, presence: true
   validates :number_of_people, numericality: { only_integer: true }, presence: true
   validates :category, inclusion: { in: CATEGORY }, presence: true
-
 
 end
