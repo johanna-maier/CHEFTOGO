@@ -24,7 +24,6 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    # TODO: before action ? redirect to - what?
     @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to bookings_path
