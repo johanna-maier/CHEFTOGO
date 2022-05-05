@@ -25,7 +25,7 @@ offers = [
     price: 300,
     number_of_people: 10,
     category: 'American',
-    img_file_name: 'bbq-chef.jpg',
+    img_file_names: ['bbq-chef.jpg', 'bbq-chef.jpg', 'bbq-chef.jpg'],
     chef: {
       first_name: 'Dan',
       last_name: 'Smith',
@@ -39,7 +39,7 @@ offers = [
     price: 300,
     number_of_people: 10,
     category: 'French',
-    img_file_name: 'french-chef.jpg',
+    img_file_names: ['french-chef.jpg', 'french-chef.jpg', 'french-chef.jpg'],
     chef: {
       first_name: 'Raphaël',
       last_name: 'Dupont',
@@ -53,7 +53,7 @@ offers = [
     price: 300,
     number_of_people: 10,
     category: 'American',
-    img_file_name: 'hamburger-chef.jpg',
+    img_file_names: ['hamburger-chef.jpg', 'hamburger-chef.jpg', 'hamburger-chef.jpg'],
     chef: {
       first_name: 'Stanley',
       last_name: 'Williams',
@@ -67,7 +67,7 @@ offers = [
     price: 300,
     number_of_people: 10,
     category: 'Indian',
-    img_file_name: 'indian-chef.jpg',
+    img_file_names: ['indian-chef.jpg', 'indian-chef.jpg', 'indian-chef.jpg'],
     chef: {
       first_name: 'Ramesh',
       last_name: 'Mehra',
@@ -81,7 +81,7 @@ offers = [
     price: 300,
     number_of_people: 10,
     category: 'German',
-    img_file_name: 'kaesespaetzle-chefs.jpg',
+    img_file_names: ['kaesespaetzle-chefs.jpg', 'kaesespaetzle-chefs.jpg', 'kaesespaetzle-chefs.jpg'],
     chef: {
       first_name: 'Ursula',
       last_name: 'Bayer',
@@ -95,7 +95,7 @@ offers = [
     price: 300,
     number_of_people: 10,
     category: 'Japanese',
-    img_file_name: 'molecular-cooking-chef.jpg',
+    img_file_names: ['molecular-cooking-chef.jpg', 'molecular-cooking-chef.jpg', 'molecular-cooking-chef.jpg'],
     chef: {
       first_name: 'Haru',
       last_name: 'Sato',
@@ -109,7 +109,7 @@ offers = [
     price: 300,
     number_of_people: 10,
     category: 'Italian',
-    img_file_name: 'pasta-chef.jpg',
+    img_file_names: ['pasta-chef.jpg', 'pasta-chef.jpg', 'pasta-chef.jpg'],
     chef: {
       first_name: 'Marco',
       last_name: 'Mazza',
@@ -123,7 +123,7 @@ offers = [
     price: 300,
     number_of_people: 10,
     category: 'American',
-    img_file_name: 'steak-chef.jpg',
+    img_file_names: ['steak-chef.jpg', 'steak-chef.jpg', 'steak-chef.jpg'],
     chef: {
       first_name: 'Thomas',
       last_name: 'Williams',
@@ -137,7 +137,7 @@ offers = [
     price: 300,
     number_of_people: 10,
     category: 'Japanese',
-    img_file_name: 'sushi-chef.jpg',
+    img_file_names: ['sushi-chef.jpg', 'sushi-chef.jpg', 'sushi-chef.jpg'],
     chef: {
       first_name: 'Jiro',
       last_name: 'Ono',
@@ -151,7 +151,7 @@ offers = [
     price: 300,
     number_of_people: 10,
     category: 'Vegan',
-    img_file_name: 'vegan-chef.jpg',
+    img_file_names: ['vegan-chef.jpg', 'vegan-chef.jpg', 'vegan-chef.jpg'],
     chef: {
       first_name: 'James',
       last_name: 'Hoot',
@@ -165,7 +165,7 @@ offers = [
     price: 300,
     number_of_people: 10,
     category: 'Vietnamese',
-    img_file_name: 'vietnamese-chef.jpg',
+    img_file_names: ['vietnamese-chef.jpg', 'vietnamese-chef.jpg', 'vietnamese-chef.jpg'],
     chef: {
       first_name: 'Tway',
       last_name: 'Nguyen',
@@ -210,14 +210,16 @@ offers.each_with_index do |offer, index|
   )
   puts 'Associating offer and image'
 
-  seed_offer.photo.attach(io: File.open("app/assets/images/#{offer[:img_file_name]}"), filename: offer[:img_file_name], content_type: 'image/jpg')
+  offer[:img_file_names].each do |img_file|
+    seed_offer.photo.attach(io: File.open("app/assets/images/#{img_file}"), filename: img_file, content_type: 'image/jpg')
+  end
+
   puts 'Associating offer and user'
   seed_offer.user = seed_user
   puts 'Saving offer'
   puts ''
   seed_offer.save!
 end
-
 
 puts 'Seeded offers & chefs'
 puts ''
