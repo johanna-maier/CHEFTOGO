@@ -15,7 +15,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.offer = @offer
-    raise
     if @booking.save
       # redirect_to root_path # TODO: change this link
       redirect_to offers_path, notice: 'Your booking was successful!'
