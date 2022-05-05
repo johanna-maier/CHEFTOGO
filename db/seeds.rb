@@ -18,9 +18,9 @@ puts 'Creating new offers'
 #   Movie.create(title: title, overview: overview, poster_url: poster_url, rating: rating)
 # end
 
-Offer.destroy_all
-User.destroy_all
-Booking.destroy_all
+# Offer.destroy_all
+# User.destroy_all
+# Booking.destroy_all
 
 offers = [
   {
