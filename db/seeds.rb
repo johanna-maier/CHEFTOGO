@@ -137,7 +137,7 @@ offers = [
     }
   },  {
     title: 'Sushi Live Cooking',
-    description: 'Enjoy one night of the best BBQ in town cooked by Jiro.',
+    description: 'Enjoy one night of the best sushi in town cooked by Jiro.',
     price: 300,
     number_of_people: 10,
     category: 'Japanese',
@@ -215,7 +215,7 @@ offers.each_with_index do |offer, index|
   puts 'Associating offer and image'
 
   offer[:img_file_names].each do |img_file|
-    seed_offer.photo.attach(io: File.open("app/assets/images/#{img_file}"), filename: img_file, content_type: 'image/jpg')
+    seed_offer.photos.attach(io: File.open("app/assets/images/#{img_file}"), filename: img_file, content_type: 'image/jpg')
   end
 
   puts 'Associating offer and user'
