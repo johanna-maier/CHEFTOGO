@@ -3,7 +3,11 @@ class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: %i[index show]
   def index
-    @offers = Offer.all
+    if params[:query].present?
+      @offers = Offer.global_search(params[:query])
+    else
+      @offers = Offer.all
+    end
   end
 
   def show
@@ -46,7 +50,7 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit(:title, :description, :price, :number_of_people, :category, :photo)
+    params.require(:offer).permit(:title, :description, :price, :number_of_people, :category, photos: [])
   end
 
   def set_offer
