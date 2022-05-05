@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+
   before_action :set_offer
   skip_before_action :set_offer, only: :index
   # before_action :set_offer, only[:new , :create]
