@@ -5,13 +5,47 @@
       <%= render "shared/offer_card", offer: @offer %>
 
       <%= simple_form_for [@offer, @booking] do |f|%>
-        <%= f.input :booking_date, as: :date, html5: true %>
-        <%= f.input :start_time, as: :time, html5: true %>
-        <%= f.input :end_time, as: :time, html5: true %>
+        <%# <%= f.input :booking_date, as: :date, html5: true %>
+        <%= f.input :booking_date, as: :string, placeholder: 'Select a date',
+            input_html: { data:
+            { controller: "flatpickr",
+              attributes: {
+                dateFormat: "d.m.Y",
+                minDate: Time.zone.now
+              }} } %>
+        <div class="d-flex" id="time-input">
+          <div style="flex-grow:1">
+            <%= f.input :start_time, as: :time, html5: true,
+            input_html: { data:
+            {controller: "flatpickr",
+              attributes: {
+                enableTime: true,
+                noCalendar: true,
+                dateFormat: "h:i K",
+                minTime: "9:00",
+                maxTime: "23:00",
+                minDate: Time.zone.now
+              }} }%>
+          </div>
+          <div style="flex-grow:1">
+            <%= f.input :end_time, as: :time, html5: true,
+            input_html: { data:
+            {controller: "flatpickr",
+              attributes: {
+                enableTime: true,
+                noCalendar: true,
+                dateFormat: "h:i K",
+                minTime: "9:00",
+                maxTime: "23:00",
+                minDate: Time.zone.now
+              }} }%>
+          </div>
+        </div>
         <%= f.input :address, required: true %>
         <%= f.input :comment, placeholder: 'Add a message or instructions for the chef'%>
         <div class="text-center">
-        <%= f.submit 'Book', class: 'btn btn-primary' %></div>
+          <%= f.submit 'Book', class: 'btn btn-primary' %>
+        </div>
       <% end %>
     </div>
     </div>

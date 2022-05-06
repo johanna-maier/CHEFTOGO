@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
-  before_action :get_offer
-  skip_before_action :get_offer, only: :index
+
+  before_action :set_offer
+  skip_before_action :set_offer, only: :index
+  # before_action :set_offer, only[:new , :create]
 
   def index
     @bookings = Booking.all
@@ -22,9 +24,15 @@ class BookingsController < ApplicationController
     end
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path
+  end
+
   private
 
-  def get_offer
+  def set_offer
     @offer = Offer.find(params[:offer_id])
   end
 

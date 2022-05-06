@@ -3,11 +3,16 @@ class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: %i[index show]
   def index
-    @offers = Offer.all
+    if params[:query].present?
+      @offers = Offer.global_search(params[:query])
+    else
+      @offers = Offer.all
+    end
   end
 
   def show
     # @offer = Offer.find(params[:id])
+    @review = Review.new # Added because partial review form needs it.
   end
 
   def new
@@ -40,13 +45,13 @@ class OffersController < ApplicationController
   def destroy
     # @offer = Offer.find(params[:id])
     @offer.destroy
-    redirect_to @offers, notice: 'Offer was successfully destroyed.'
+    redirect_to offers_path, notice: 'Offer was successfully destroyed.'
   end
 
   private
 
   def offer_params
-    params.require(:offer).permit(:title, :description, :price, :number_of_people, :category, :photo)
+    params.require(:offer).permit(:title, :description, :price, :number_of_people, :category, photos: [])
   end
 
   def set_offer

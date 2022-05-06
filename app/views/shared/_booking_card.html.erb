@@ -1,5 +1,6 @@
 <%= link_to offer_path(booking.offer) do %>
-  <div class="container card-category" style="background-image: linear-gradient(rgba(243,243,243,0.6), rgba(243,243,243,0.7)), url(<%= cl_image_path booking.offer.photo.key %>);">
+  <div class="container card-category" style="background-image: linear-gradient(rgba(243,243,243,0.6), rgba(243,243,243,0.7)), url(<%= cl_image_path booking.offer.photos.first.key %>);">
+
     <div class="d-flex flex-column justify-content-between card-infos">
       <h2><%= booking.offer.title %></h2>
       <div class="d-flex justify-content-between">
@@ -8,7 +9,11 @@
       </div>
       <div class="d-flex justify-content-between">
         <p><%= booking.address %></p>
-        <%= link_to "Cancel", "#", class: "btn btn-transparent" %>
+
+        <%= link_to "Cancel",
+             booking_path(booking), class: "btn btn-transparent",
+             method: :delete,
+             data: { confirm: "Are you sure you want to cancel this booking?" } %>
       </div>
     </div>
   </div>

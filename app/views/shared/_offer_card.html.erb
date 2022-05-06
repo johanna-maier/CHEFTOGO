@@ -1,6 +1,11 @@
 <%= link_to offer_path(offer) do %>
   <div class="container card-product">
-    <%#= cl_image_tag offer.photo.key %>
+
+    <%# display 1st Image %>
+    <% if offer.photos.attached? %>
+      <%= cl_image_tag offer.photos.first.key %>
+    <% end %>
+
     <div class="d-flex flex-column justify-content-between card-product-infos">
       <h2><%= offer.title %></h2>
       <p><%= offer.description %></p>
