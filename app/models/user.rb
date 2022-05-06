@@ -10,6 +10,6 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  # validates :avatar_photo, presence: true
+  validates :avatar_photo, presence: true
   # :description can be optional
 end
