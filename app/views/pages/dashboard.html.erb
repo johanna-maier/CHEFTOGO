@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row d-flex justify-content-center align-items-top">
+    <div class="col-12 col-lg-5 col-xl-4 profile">
+      <div class="rounded-circle picture-placeholder" style="background-image: url(<%= image_path 'https://kitt.lewagon.com/placeholder/users/johanna-maier' %>); background-position: center;"></div>
+      <h3><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize%></h3>
+      <div class="d-flex align-items-center user-info">
+        <p class="text-center"><%= current_user.description %></p>
+      </div>
+      <button class="btn edit-btn">Edit Profile</button>
+    </div>
+    <div class="col-12 col-lg-6 tabs" data-controller="switch-tabs">
+      <div class="button-container">
+        <button disabled
+          class="btn tab-btn"
+          data-action="click->switch-tabs#toggle"
+          data-switch-tabs-target="bookings">
+          My Bookings
+        </button>
+        <% unless @offers.empty? %>
+          <button
+            class="btn tab-btn"
+            data-action="click->switch-tabs#toggle"
+            data-switch-tabs-target="offers">
+            My Offers
+          </button>
+        <% end %>
+      </div>
+      <div class="bookings-container"
+          data-action="switch-tabs#toggle"
+          data-switch-tabs-target="bookingsList">
+        <% if @bookings.empty? %>
+         <%= render "shared/warning_card" %>
+        <% else %>
+          <% @bookings.each do |booking| %>
+            <%= render "shared/booking_card", booking: booking %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="d-none offers-container"
+          data-action="switch-tabs#toggle"
+          data-switch-tabs-target="offersList">
+        <% @offers.each do |offer| %>
+          <%= render "shared/offer_card", offer: offer %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

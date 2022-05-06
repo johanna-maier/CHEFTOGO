@@ -1,0 +1,7 @@
+<!-- app/views/reviews/new.html.erb -->
+<%= simple_form_for [ @offer, @review ] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+  <%= f.input :rating, as: :integer %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>

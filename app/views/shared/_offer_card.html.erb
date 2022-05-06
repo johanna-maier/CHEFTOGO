@@ -1,5 +1,6 @@
 <%= link_to offer_path(offer) do %>
   <div class="container card-product">
+
     <%# display 1st Image %>
     <% if offer.photos.attached? %>
       <%= cl_image_tag offer.photos.first.key %>
