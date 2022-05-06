@@ -26,10 +26,10 @@ offers = [
   {
     title: 'BBQ Cooking Evening',
     description: 'Enjoy one night of the best BBQ in town cooked by Dan.',
-    price: 300,
-    number_of_people: 10,
+    price: 500,
+    number_of_people: 15,
     category: 'American',
-    img_file_name: 'bbq-chef.jpg',
+    img_file_names: ['bbq-chef.jpg', 'bbq-chef.jpg', 'bbq-chef.jpg'],
     chef: {
       first_name: 'Dan',
       last_name: 'Smith',
@@ -40,10 +40,10 @@ offers = [
   },  {
     title: 'Parisian Delicacies',
     description: 'Experience the tastes of Paris with Raphaël.',
-    price: 300,
-    number_of_people: 10,
+    price: 150,
+    number_of_people: 3,
     category: 'French',
-    img_file_name: 'french-chef.jpg',
+    img_file_names: ['french-chef.jpg', 'french-chef.jpg', 'french-chef.jpg'],
     chef: {
       first_name: 'Raphaël',
       last_name: 'Dupont',
@@ -54,10 +54,10 @@ offers = [
   },  {
     title: 'Best Hamburgers Made for You!',
     description: 'Have a great hamburger feast with Stanley!',
-    price: 300,
-    number_of_people: 10,
+    price: 150,
+    number_of_people: 5,
     category: 'American',
-    img_file_name: 'hamburger-chef.jpg',
+    img_file_names: ['hamburger-chef.jpg', 'hamburger-chef.jpg', 'hamburger-chef.jpg'],
     chef: {
       first_name: 'Stanley',
       last_name: 'Williams',
@@ -68,10 +68,10 @@ offers = [
   },  {
     title: 'Indian Culinary Experience',
     description: 'Enjoy one night of the best Indian food in town cooked by Ramesh Mehra.',
-    price: 300,
-    number_of_people: 10,
+    price: 180,
+    number_of_people: 5,
     category: 'Indian',
-    img_file_name: 'indian-chef.jpg',
+    img_file_names: ['indian-chef.jpg', 'indian-chef.jpg', 'indian-chef.jpg'],
     chef: {
       first_name: 'Ramesh',
       last_name: 'Mehra',
@@ -82,10 +82,10 @@ offers = [
   },  {
     title: 'Handmade Cheesy Käsespätzle',
     description: 'Enjoy one night of the best Käsespätzle in town cooked by our crew.',
-    price: 300,
-    number_of_people: 10,
+    price: 210,
+    number_of_people: 6,
     category: 'German',
-    img_file_name: 'kaesespaetzle-chefs.jpg',
+    img_file_names: ['kaesespaetzle-chefs.jpg', 'kaesespaetzle-chefs.jpg', 'kaesespaetzle-chefs.jpg'],
     chef: {
       first_name: 'Ursula',
       last_name: 'Bayer',
@@ -96,10 +96,10 @@ offers = [
   },  {
     title: 'Molecular Food Experience',
     description: 'Enjoy a night of molecular food magic with Haru.',
-    price: 300,
-    number_of_people: 10,
+    price: 370,
+    number_of_people: 4,
     category: 'Japanese',
-    img_file_name: 'molecular-cooking-chef.jpg',
+    img_file_names: ['molecular-cooking-chef.jpg', 'molecular-cooking-chef.jpg', 'molecular-cooking-chef.jpg'],
     chef: {
       first_name: 'Haru',
       last_name: 'Sato',
@@ -110,10 +110,10 @@ offers = [
   },  {
     title: 'Authentic Italian Pasta',
     description: 'Enjoy one night of the Italian pasta in town cooked by Marco.',
-    price: 300,
-    number_of_people: 10,
+    price: 240,
+    number_of_people: 7,
     category: 'Italian',
-    img_file_name: 'pasta-chef.jpg',
+    img_file_names: ['pasta-chef.jpg', 'pasta-chef.jpg', 'pasta-chef.jpg'],
     chef: {
       first_name: 'Marco',
       last_name: 'Mazza',
@@ -124,10 +124,10 @@ offers = [
   },  {
     title: 'Steak Evening',
     description: 'Enjoy one night of the best steak in town cooked by Thomas.',
-    price: 300,
-    number_of_people: 10,
+    price: 160,
+    number_of_people: 3,
     category: 'American',
-    img_file_name: 'steak-chef.jpg',
+    img_file_names: ['steak-chef.jpg', 'steak-chef.jpg', 'steak-chef.jpg'],
     chef: {
       first_name: 'Thomas',
       last_name: 'Williams',
@@ -138,10 +138,10 @@ offers = [
   },  {
     title: 'Sushi Live Cooking',
     description: 'Enjoy one night of the best BBQ in town cooked by Jiro.',
-    price: 300,
-    number_of_people: 10,
+    price: 220,
+    number_of_people: 4,
     category: 'Japanese',
-    img_file_name: 'sushi-chef.jpg',
+    img_file_names: ['sushi-chef.jpg', 'sushi-chef.jpg', 'sushi-chef.jpg'],
     chef: {
       first_name: 'Jiro',
       last_name: 'Ono',
@@ -152,10 +152,10 @@ offers = [
   },  {
     title: 'Vegan Cooking Evening',
     description: 'Enjoy one night of the best vegan food in town cooked by James.',
-    price: 300,
-    number_of_people: 10,
+    price: 150,
+    number_of_people: 5,
     category: 'Vegan',
-    img_file_name: 'vegan-chef.jpg',
+    img_file_names: ['vegan-chef.jpg', 'vegan-chef.jpg', 'vegan-chef.jpg'],
     chef: {
       first_name: 'James',
       last_name: 'Hoot',
@@ -166,10 +166,10 @@ offers = [
   },  {
     title: 'Vietnamese Cooking Evening',
     description: 'Enjoy one night of the best Vietnamese food in town cooked by Tway.',
-    price: 300,
-    number_of_people: 10,
+    price: 180,
+    number_of_people: 6,
     category: 'Vietnamese',
-    img_file_name: 'vietnamese-chef.jpg',
+    img_file_names: ['vietnamese-chef.jpg', 'vietnamese-chef.jpg', 'vietnamese-chef.jpg'],
     chef: {
       first_name: 'Tway',
       last_name: 'Nguyen',
@@ -214,14 +214,16 @@ offers.each_with_index do |offer, index|
   )
   puts 'Associating offer and image'
 
-  seed_offer.photo.attach(io: File.open("app/assets/images/#{offer[:img_file_name]}"), filename: offer[:img_file_name], content_type: 'image/jpg')
+  offer[:img_file_names].each do |img_file|
+    seed_offer.photos.attach(io: File.open("app/assets/images/#{img_file}"), filename: img_file, content_type: 'image/jpg')
+  end
+
   puts 'Associating offer and user'
   seed_offer.user = seed_user
   puts 'Saving offer'
   puts ''
   seed_offer.save!
 end
-
 
 puts 'Seeded offers & chefs'
 puts ''

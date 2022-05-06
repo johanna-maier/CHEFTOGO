@@ -1,5 +1,5 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/mM-L0yx5LcQ); height:500px;">
-  <div class="container">
+  <div class="container text-center">
     <h1>Hire a Private Chef </h1>
     <p>Enjoy a customized culinary experience with a Private Chef in the comfort of your own home</p>
     <%= link_to 'Get Started', offers_path, class: 'btn btn-flat' %>
@@ -7,31 +7,32 @@
 </div>
 <%# <%= cl_image_tag("iaischz7fohjap0v9rvq.jpg",  width: 1400, height: 300, crop: :fill) %>
 <div class="container mt-5" id="homepage-intro">
-<div class="row text-center align-items-center">
-  <div class="col-12 col-md-6 ">
-    <%= image_tag "cook1.jpg" %>
+  <div class="row text-center align-items-center">
+    <div class="col-12 col-md-6 homepage-intro-img">
+      <%= image_tag "cook1.jpg" %>
+    </div>
+    <div class="col-12 col-md-6 homepage-intro-text">
+      <h3>The Cooking</h3>
+      <p>Your Private Chef will arrive with all the ingredients needed to prepare your dreamed meal.</p>
+    </div>
   </div>
-  <div class="col-12 col-md-6">
-    <h3>The Cooking</h3>
-    <p>Your Private Chef will arrive with all the ingredients needed to prepare your dreamed meal.</p>
+  <div class="row text-center align-items-center">
+    <div class="col-12 col-md-6 homepage-intro-text">
+      <h3>The Experience</h3>
+      <p>Your chef will take care of your party all-throughout the experience. That means host dutties are off the table for you!</p>
+    </div>
+    <div class="col-12 col-md-6 homepage-intro-img">
+      <%= image_tag "serve1.jpg" %>
+    </div>
   </div>
-</div>
-<div class="row text-center align-items-center v">
-  <div class="col-12 col-md-6">
-    <h3>The Experience</h3>
-    <p>Your chef will take care of your party all-throughout the experience. That means host dutties are off the table for you!</p>
-  </div>
-  <div class="col-12 col-md-6 ">
-    <%= image_tag "serve1.jpg" %>
-  </div>
-</div>
 
-<div class="row text-center align-items-center">
-  <div class="col-12 col-md-6 ">
-    <%= image_tag "finish.jpg" %>
-  </div>
-  <div class="col-12 col-md-6">
-    <h3>The Clean up</h3>
-    <p> By the end of the night, all there will be left for you to do is relax and enjoy your company.</p>
+  <div class="row text-center align-items-center">
+    <div class="col-12 col-md-6 homepage-intro-img">
+      <%= image_tag "finish.jpg" %>
+    </div>
+    <div class="col-12 col-md-6 homepage-intro-text">
+      <h3>The Clean up</h3>
+      <p> By the end of the night, all there will be left for you to do is relax and enjoy your company.</p>
+    </div>
   </div>
 </div>
