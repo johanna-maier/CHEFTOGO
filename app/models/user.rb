@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :offers, dependent: :destroy
   has_many :bookings
+  has_one_attached :avatar_photo
   has_many :reviews
 
   # Include default devise modules. Others available are:
@@ -10,5 +11,6 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :avatar_photo, presence: true
   # :description can be optional
 end

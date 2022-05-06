@@ -8,35 +8,77 @@
   align-items: center;
   padding: 30px 0;
   margin-bottom: 20px;
+  color: rgb(54, 50, 31);
+  font-family: inherit;
   background-color: white;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .picture-placeholder {
-  height: 150px;
+  min-height: 150px;
   width: 150px;
   margin-bottom: 20px;
 }
 
 .user-info {
   width: 70%;
-  height: 30%;
-  background-color: beige;
-  margin-bottom: 20px;
+  min-height: 150px;
+  background-color: rgb(243, 243, 243);
+  margin: 2rem 0;
 }
 
 .edit-btn {
   background-color: rgb(232, 232, 232);
-  border-radius: 10px;
+  border-radius: 5px;
+}
 
-  :focus {
-    box-shadow: gray;
-  }
+.edit-btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(84, 92, 79, 0.25);
+}
+
+.tab-btn {
+  background-color: rgb(179, 135, 135);
+  border-radius: 5px;
+}
+
+.btn:disabled {
+  background-color: rgb(183, 10, 10);
+  color:rgb(232, 232, 232);
+  box-shadow: none;
+}
+
+.card-product {
+  height: 180px;
+  border-radius: 5px;
 }
 
 @media only screen and (min-width: 992px) {
+  body {
+    position: fixed;
+    width: 100vw;
+  }
+
   .profile {
-    height: 70vh;
+    height: 85vh;
+    margin-right: 30px;
+  }
+
+  .tabs {
+    height: 85vh;
+    position: relative;
+    overflow-y: scroll;
+    padding-bottom: 40px;
+  }
+
+  .button-container {
+    background-color: rgb(218, 194, 194);
+    display: block;
+    size: content-box;
     position: sticky;
-    top: 60px;
+    top: 0;
+    z-index: 1;
   }
 }
