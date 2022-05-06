@@ -1,12 +1,12 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to offers_path, class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+      <%= image_tag "Chef2Go.png", class: "avatar" %>
     <% end %>
 
     <form class="d-flex align-items-center flex-nowrap" action="/offers" method="get">
 
-    <input class="form-control mr-sm-2" name ="query" type="search" placeholder="Find a cooking class" aria-label="Search">
+    <input class="form-control mr-sm-2" name ="query" type="search" placeholder="Find your next culinary experience" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 
   </form>
