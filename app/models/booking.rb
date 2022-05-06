@@ -10,6 +10,7 @@ class Booking < ApplicationRecord
   validate :end_time_after_start_time
 
   private
+
   # start time must be before end time
   def end_time_after_start_time
     return if end_time.blank? || start_time.blank?
