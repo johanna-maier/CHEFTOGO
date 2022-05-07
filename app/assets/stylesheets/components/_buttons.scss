@@ -1,7 +1,7 @@
 .btn-flat {
   color: white;
   padding: 8px 30px;
-  border-radius: 8px;//20px;
+  border-radius: 8px; //20px;
   background: #ee5454ee;
   transition: background 0.3s ease;
 }
@@ -10,7 +10,6 @@
   background: #af3c3c;
   color: white;
 }
-
 
 .profile-edit-btn {
   border: 2px solid gray;
@@ -29,6 +28,6 @@
 
 .tab-btn:disabled {
   background-color: rgb(241, 48, 4);
-  color:rgb(232, 232, 232);
+  color: #fff;
   box-shadow: none;
 }
