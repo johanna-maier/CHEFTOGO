@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-9 col-lg-6 m-3 pb-3">
-    <div id="new_booking">
       <%= render "shared/offer_card", offer: @offer %>
 
+    <div id="new_booking" class="mt-3">
       <%= simple_form_for [@offer, @booking] do |f|%>
         <%# <%= f.input :booking_date, as: :date, html5: true %>
         <%= f.input :booking_date, as: :string, placeholder: 'Select a date',
@@ -15,7 +15,7 @@
               }} } %>
         <div class="d-flex" id="time-input">
           <div style="flex-grow:1">
-            <%= f.input :start_time, as: :time, html5: true,
+            <%= f.input :start_time, as: :time, html5: true, placeholder: 'Please choose a time',
             input_html: { data:
             {controller: "flatpickr",
               attributes: {
@@ -28,7 +28,7 @@
               }} }%>
           </div>
           <div style="flex-grow:1">
-            <%= f.input :end_time, as: :time, html5: true,
+            <%= f.input :end_time, as: :time, html5: true, placeholder: 'Please choose a time',
             input_html: { data:
             {controller: "flatpickr",
               attributes: {
@@ -44,7 +44,7 @@
         <%= f.input :address, required: true %>
         <%= f.input :comment, placeholder: 'Add a message or instructions for the chef'%>
         <div class="text-center">
-          <%= f.submit 'Book', class: 'btn btn-primary' %>
+          <%= f.submit 'Book', class: 'btn btn-flat' %>
         </div>
       <% end %>
     </div>

@@ -8,10 +8,10 @@
 
     <div class="d-flex flex-column justify-content-between card-product-infos">
       <h2><%= offer.title %></h2>
-      <p><%= offer.description %></p>
+      <p><%= truncate(offer.description, :length => 55, :omission => '...') %></p>
       <div class="d-flex justify-content-between">
         <p><%= offer.number_of_people %> people</p>
-        <p><%= offer.price %> EUR </p>
+        <p><%= sprintf('%.2f', offer.price) %> EUR </p>
       </div>
     </div>
   </div>

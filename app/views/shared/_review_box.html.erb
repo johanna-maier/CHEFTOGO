@@ -1,0 +1,26 @@
+<div class="review-container">
+  <ul>
+    <% @offer.reviews.each do |review| %>
+      <div class="review-card">
+        <li>
+          <%= review.title %> |
+          <% review.rating.to_i.times do  %>
+            ✨
+          <% end %> |
+
+          <em>
+            by <%= review.user.first_name %>
+            <%= link_to "(Remove review)",
+                      review_path(review),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %>
+          </em>
+        </li>
+
+        <li>
+          "<%= review.content %>"
+        </li>
+      </div>
+    <% end %>
+  </ul>
+</div>
