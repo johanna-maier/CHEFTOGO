@@ -26,4 +26,12 @@ class Offer < ApplicationRecord
   validates :number_of_people, numericality: { only_integer: true }, presence: true
   validates :category, inclusion: { in: CATEGORY }, presence: true
 
+  def average_rating
+    if self.reviews.size > 0
+      self.reviews.average(:rating)
+    else
+      'undefined'
+    end
+  end
+
 end

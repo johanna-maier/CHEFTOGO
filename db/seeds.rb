@@ -181,6 +181,8 @@ offers = [
 
 ]
 
+lorem_description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet."
+
 # # Cloudinary Image Info
 # resource_type = "image"
 # type = "upload"
@@ -197,6 +199,7 @@ offers.each_with_index do |offer, index|
     email: offer[:chef][:email],
     password: offer[:chef][:password]
   )
+  seed_user.avatar_photo.attach(io: File.open("app/assets/images/#{offer[:img_file_names][0]}"), filename: offer[:img_file_names][0], content_type: 'image/jpg')
   seed_user.save!
 
   # puts 'Cloudinary Image Info ID'
@@ -209,7 +212,9 @@ offers.each_with_index do |offer, index|
 
   puts 'Creating offer'
   seed_offer = Offer.new(
-    title: offer[:title], description: offer[:description], price: offer[:price],
+    title: offer[:title],
+    description: "#{offer[:description]} #{lorem_description}",
+    price: offer[:price],
     number_of_people: offer[:number_of_people], category: offer[:category]
   )
   puts 'Associating offer and image'
@@ -270,5 +275,6 @@ users.each_with_index do |user, index|
     email: user[:email],
     password: user[:password]
   )
+  seed_user.avatar_photo.attach(io: File.open("app/assets/images/avatar-placeholder.png"), filename: "avatar-placeholder.png", content_type: 'image/png')
   seed_user.save!
 end

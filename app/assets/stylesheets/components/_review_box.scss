@@ -1,0 +1,18 @@
+.review-container {
+  ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+  }
+
+  .review-card {
+    background: rgb(248, 248, 248);
+    border: rgb(231, 231, 231) 1px solid;
+    border-radius: 4px;
+    margin-top: 4px;
+    padding: 8px;
+  }
+  li {
+    margin-top: 4px;
+  }
+}
