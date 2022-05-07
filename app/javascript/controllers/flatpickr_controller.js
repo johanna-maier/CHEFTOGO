@@ -17,4 +17,5 @@ export default class extends Controller {
     let config = JSON.parse(this.element.dataset.attributes)
     flatpickr(this.element, config);
   }
+
 }

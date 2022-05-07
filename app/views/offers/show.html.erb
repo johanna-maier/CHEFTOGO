@@ -25,7 +25,11 @@
       <p>
         Average Rating: <br>
         <% if @offer.reviews.count == 0 %>
-          <em><%= link_to 'Rate this chef!', '#new-review' %></em>
+          <% if @offer.user == current_user %>
+            <small>No ratings yet!</small>
+          <% else %>
+            <em><%= link_to 'Rate this chef!', '#new-review' %></em>
+          <% end %>
         <% end %>
         <% @offer.average_rating.to_i.times do  %>
             ⭐
@@ -37,14 +41,13 @@
         <span class='person-tag'><%= pluralize(@offer.number_of_people, 'person') %></span>
         <span class='category-tag'><%= @offer.category %></span>
         <span class='price-tag'><%= sprintf('%.0f', @offer.price) %> EUR</span>
-
       </div>
       <div class="col-6 text-end">
         <% if @offer.user == current_user %>
-          <%= link_to "Edit offer", edit_offer_path, class: "btn btn-outline-secondary " %>
+          <%= link_to "Edit offer", edit_offer_path, class: "btn btn-outline-secondary btn-sm" %>
 
           <%= link_to "Delete offer",
-                      offer_path(@offer), class: "btn btn-outline-danger",
+                      offer_path(@offer), class: "btn btn-outline-secondary btn-sm",
                       method: :delete,
                       data: { confirm: "Are you sure?" } %>
 
@@ -69,7 +72,7 @@
       <h3>All you need to know about your experience</h3>
     </div>
     <div class="col-2 text-end">
-      <%= cl_image_tag @offer.user.avatar_photo.key, class: "avatar-large", zoom: 0.7, aspect_ratio: 1, crop: :crop, gravity: :face  %>
+      <%= cl_image_tag @offer.user.avatar_photo.key, class: "avatar-large", zoom: 0.7, aspect_ratio: 1, crop: :crop, gravity: :face %>
     </div>
   </div>
 
