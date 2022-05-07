@@ -1,17 +1,13 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 14rem;
   color: rgb(54, 50, 31);
   font-family: inherit;
   font-size: larger;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-  border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .card-category a {

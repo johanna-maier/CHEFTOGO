@@ -1,7 +1,6 @@
 class BookingsController < ApplicationController
-
   before_action :set_offer
-  skip_before_action :set_offer, only: :index
+  skip_before_action :set_offer, only: %i[index destroy]
   # before_action :set_offer, only[:new , :create]
 
   def index
@@ -27,7 +26,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to dashboard_path
   end
 
   private
