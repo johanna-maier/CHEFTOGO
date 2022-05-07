@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container outer-container">
   <div class="row d-flex justify-content-center align-items-top">
     <div class="col-12 col-lg-5 col-xl-4 profile">
-      <div class="rounded-circle picture-placeholder" style="background-image: url(<%= image_path 'https://kitt.lewagon.com/placeholder/users/johanna-maier' %>); background-position: center;"></div>
+      <%= cl_image_tag current_user.avatar_photo.key, class: "avatar-xl", aspect_ratio: 1, crop: :crop, gravity: :face %>
       <h3><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize%></h3>
-      <div class="d-flex align-items-center user-info">
-        <p class="text-center"><%= current_user.description %></p>
+      <div class="d-flex align-items-center justify-content-center user-info">
+        <p><%= current_user.description %></p>
       </div>
-      <button class="btn edit-btn">Edit Profile</button>
+      <button class="btn profile-edit-btn">Edit Profile</button>
     </div>
     <div class="col-12 col-lg-6 tabs" data-controller="switch-tabs">
       <div class="button-container">
@@ -25,23 +25,25 @@
           </button>
         <% end %>
       </div>
-      <div class="bookings-container"
-          data-action="switch-tabs#toggle"
-          data-switch-tabs-target="bookingsList">
-        <% if @bookings.empty? %>
-         <%= render "shared/warning_card" %>
-        <% else %>
-          <% @bookings.each do |booking| %>
-            <%= render "shared/booking_card", booking: booking %>
+      <div class="d-flex flex-column align-items-center tab-content-container">
+        <div class="bookings-container"
+            data-action="switch-tabs#toggle"
+            data-switch-tabs-target="bookingsList">
+          <% if @bookings.empty? %>
+          <%= render "shared/warning_card" %>
+          <% else %>
+            <% @bookings.each do |booking| %>
+              <%= render "shared/booking_card", booking: booking %>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
-      <div class="d-none offers-container"
-          data-action="switch-tabs#toggle"
-          data-switch-tabs-target="offersList">
-        <% @offers.each do |offer| %>
-          <%= render "shared/offer_card", offer: offer %>
-        <% end %>
+        </div>
+        <div class="d-none offers-container"
+            data-action="switch-tabs#toggle"
+            data-switch-tabs-target="offersList">
+          <% @offers.each do |offer| %>
+            <%= render "shared/offer_card", offer: offer, id: "offer-card" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

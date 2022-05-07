@@ -14,11 +14,13 @@
 
   <body>
     <%= render 'shared/navbar' %>
+    <div class="wrapper">
 
-    <!-- Devise alerts ad notices -->
-    <%= render 'shared/flashes' %>
+      <!-- Devise alerts ad notices -->
+      <%= render 'shared/flashes' %>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
   </body>
 </html>
