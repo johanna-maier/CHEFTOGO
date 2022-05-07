@@ -5,5 +5,7 @@
   <%= f.input :number_of_people, as: :integer %>
   <%= f.input :category, collection: Offer::CATEGORY %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.button :submit, class: 'btn btn-flat' %>
+  <div class="text-center">
+    <%= f.button :submit, class: 'btn btn-flat' %>
+  </div>
 <% end %>
