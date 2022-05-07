@@ -17,7 +17,7 @@
 
 .photo-grid-first-two {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(auto, auto));
   // grid-template-columns: repeat(2, minmax(auto, auto));
 
   grid-gap: 4px;
