@@ -18,7 +18,4 @@ export default class extends Controller {
     flatpickr(this.element, config);
   }
 
-  onChange() {
-    console.log(this.element);
-  }
 }
