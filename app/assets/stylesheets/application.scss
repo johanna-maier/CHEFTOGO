@@ -13,6 +13,15 @@
 
 // External libraries
 @import "flatpickr/dist/flatpickr.css";
-// body {
-//   padding-bottom: 100px;
-// }
+
+
+body {
+  overflow-x: hidden;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 60px;
+}

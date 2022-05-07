@@ -10,3 +10,25 @@
   background: #af3c3c;
   color: white;
 }
+
+
+.profile-edit-btn {
+  border: 2px solid gray;
+  border-radius: 5px;
+}
+
+.profile-edit-btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(84, 92, 79, 0.25);
+}
+
+.tab-btn {
+  background-color: rgb(255, 198, 194);
+  border-radius: 5px 5px 0 0;
+}
+
+.tab-btn:disabled {
+  background-color: rgb(241, 48, 4);
+  color:rgb(232, 232, 232);
+  box-shadow: none;
+}

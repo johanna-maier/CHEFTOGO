@@ -7,11 +7,11 @@
     <% end %>
 
     <div class="d-flex flex-column justify-content-between card-product-infos">
-      <h2><%= offer.title %></h2>
-      <p><%= truncate(offer.description, :length => 55, :omission => '...') %></p>
+      <h3><%= offer.title %></h3>
+      <p><%= offer.description.gsub(/(\.|!).*/, '') %>.</p>
       <div class="d-flex justify-content-between">
-        <p><%= offer.number_of_people %> people</p>
-        <p><%= sprintf('%.2f', offer.price) %> EUR </p>
+        <p><b><%= offer.number_of_people %> people</b></p>
+        <p><b><%= sprintf('%.0f', offer.price) %> EUR </b></p>
       </div>
     </div>
   </div>

@@ -10,15 +10,18 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= favicon_link_tag asset_path('Chef2Go.png') %>
   </head>
 
   <body>
     <%= render 'shared/navbar' %>
+    <div class="wrapper">
 
-    <!-- Devise alerts ad notices -->
-    <%= render 'shared/flashes' %>
+      <!-- Devise alerts ad notices -->
+      <%= render 'shared/flashes' %>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
   </body>
 </html>
