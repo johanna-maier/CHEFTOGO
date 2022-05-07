@@ -45,7 +45,7 @@ class OffersController < ApplicationController
   def destroy
     # @offer = Offer.find(params[:id])
     @offer.destroy
-    redirect_to offers_path, notice: 'Offer was successfully destroyed.'
+    redirect_to dashboard_path, notice: 'Offer was successfully destroyed.'
   end
 
   private

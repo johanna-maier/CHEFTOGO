@@ -12,12 +12,13 @@
   color: rgb(54, 50, 31);
   font-family: inherit;
   background-color: white;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.bookings-container, .offers-container {
+.bookings-container,
+.offers-container {
   width: 100%;
 }
 
@@ -35,7 +36,6 @@
   height: 35%;
   background-color: rgb(243, 243, 243);
 }
-
 
 @media only screen and (min-width: 992px) {
   .profile {

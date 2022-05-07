@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     @booking.offer = @offer
     if @booking.save
       # redirect_to root_path # TODO: change this link
-      redirect_to offers_path, notice: 'Your booking was successful!'
+      redirect_to dashboard_path, notice: 'Your booking was successful!'
     else
       render :new
     end

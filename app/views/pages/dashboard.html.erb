@@ -3,7 +3,7 @@
     <div class="col-12 col-lg-5 col-xl-4 profile">
       <%= cl_image_tag current_user.avatar_photo.key, class: "avatar-xl", aspect_ratio: 1, crop: :crop, gravity: :face %>
       <h3><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize%></h3>
-      <div class="d-flex align-items-center justify-content-center user-info">
+      <div class="d-flex align-items-center justify-content-center text-center user-info">
         <p><%= current_user.description %></p>
       </div>
       <button class="btn profile-edit-btn">Edit Profile</button>
