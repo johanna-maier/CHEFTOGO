@@ -1,8 +1,9 @@
-<div class="review-container">
-  <ul>
-    <% @offer.reviews.each do |review| %>
+<div class="review-container" >
+  <ul data-insert-in-list-target="items">
+    <% offer.reviews.each do |review| %>
       <div class="review-card">
-        <li>
+        <li id="review-<%="#{review.id + 1}"%>">
+          <span class="anchor"></span>
           <%= review.title %> |
           <% review.rating.to_i.times do  %>
             ⭐

@@ -11,7 +11,7 @@
   </div>
 </div>
 -->
-<div class="container col-10 offer-details">
+<div class="container col-10 offer-details" >
   <div class="row justify-content-between  mt-5">
     <div class="col-7">
       <h1><%= @offer.title %></h1>
@@ -49,7 +49,7 @@
           <%= link_to "Delete offer",
                       offer_path(@offer), class: "btn btn-outline-secondary btn-sm",
                       method: :delete,
-                      data: { confirm: "Are you sure?" } %>
+                      data: { confirm: "Are you sure?" }, remote: true %>
 
         <% else %>
           <%= link_to 'Book now', new_offer_booking_path(@offer), class: 'btn btn-flat' %>
@@ -77,34 +77,34 @@
   </div>
 
   <hr>
-<!-- Detailed description & reviews -->
-  <div class="row">
+  <!-- Detailed description & reviews -->
+  <div class="row" >
+    <div data-controller="insert-in-list">
+      <div class="col" >
+        <span class="anchor" id="description-text"></span>
+        <h5>Details for <%= @offer.title %> </h5>
+        <p><%= truncate(@offer.description, :length => 450, :omission => '.') %></p>
+      <hr>
+        <h5>Read what others wrote about <%= @offer.user.first_name %>!</h5>
 
-    <div class="col">
-      <span class="anchor" id="description-text"></span>
-      <h5>Details for <%= @offer.title %> </h5>
-      <p><%= truncate(@offer.description, :length => 450, :omission => '.') %></p>
-    <hr>
-      <h5>Read what others wrote about <%= @offer.user.first_name %>!</h5>
+        <% if @offer.reviews.count == 0 %>
+          <p>There are currently no reviews</p>
+        <% end %>
 
-      <% if @offer.reviews.count == 0 %>
-        <p>There are currently no reviews</p>
-      <% end %>
+          <%= render 'shared/review_box', offer: @offer %>
 
-        <%= render 'shared/review_box' %>
-
-    <hr>
+      <hr>
 
 
-    </div>
-    <div class="col-3">
-      <span class="anchor" id="new-review"></span>
-      <div >
-          <h5>Leave a review for <%= @offer.title %></h5>
-          <%= render "reviews/form" %>
+      </div>
+      <div class="col-3">
+        <span class="anchor" id="new-review"></span>
+        <div >
+            <h5>Leave a review for <%= @offer.title %></h5>
+            <%= render "reviews/form", offer: @offer, review: @review %>
+        </div>
       </div>
     </div>
-
 
   </div>
 
@@ -117,7 +117,7 @@
 
     </div>
 
-<!-- Layout not quite right - Slider instead.
+  <!-- Layout not quite right - Slider instead.
           <% if @offer.photos.count == 1 %>
             <%= render 'shared/photos_grid_one_photo' %>
           <% else %>
